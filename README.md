@@ -1,6 +1,8 @@
 # FiveM Daily Login Rewards System
 
 A modern, customizable daily login rewards system for ESX-based FiveM servers. Supports item, money, weapon, and vehicle rewards with a beautiful and easy-to-configure UI.
+![Screenshot 2025-05-26 064240](https://github.com/user-attachments/assets/3d09306b-0baf-44cb-8cc9-a1953b88e963)
+![Screenshot 2025-05-26 064300](https://github.com/user-attachments/assets/62def650-592d-4ece-a338-8aa0aa0f51da)
 
 ## Features
 
@@ -24,8 +26,8 @@ A modern, customizable daily login rewards system for ESX-based FiveM servers. S
 4. **Configure rewards and language** in the `config.lua` file.
 
 ## Configuration
-
 Open `config.lua` to edit:
+![image](https://github.com/user-attachments/assets/81146da9-dd61-4a3f-9402-b111f42fe7a7)
 
 - **Daily rewards:**  
   Edit the `Config.DailyRewards` table to set up rewards for each day.
