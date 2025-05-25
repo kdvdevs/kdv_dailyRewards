@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
+
+body, .daily-rewards-modal {
+    display: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.daily, .rewards, .topbar-main, .topbar-accent {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+body, .daily-rewards-modal, .reward-box, .collect-btn, .locked-btn, .collected-btn, .item-footer, .reward-label, .reward-amount {
+    font-family: 'Roboto', Arial, sans-serif !important;
+    font-weight: 400;
+}
+
+.daily-rewards-modal {
+    max-width: 1400px;
+    width: 95vw;
+    min-width: 1100px;
+    margin: 0;
+    background: rgba(20, 20, 20, 0.98);
+    border-radius: 18px;
+    box-shadow: 0 8px 40px #000a;
+    padding: 32px;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    position: relative;
+    gap: 24px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.daily, .rewards {
+    font-size: 2.8rem;
+    line-height: 1;
+}
+
+.daily { color: #fff; }
+.rewards { color: #ffd600; }
+
+.timer {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: #18191c;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1em;
+    margin-left: 24px;
+    box-shadow: 0 2px 8px #0002;
+}
+
+.timer-day, .timer-text {
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: none;
+    font-size: 1.1em;
+}
+
+.timer-icon {
+    font-size: 1.3em;
+    margin-right: 6px;
+}
+
+.timer span {
+    min-width: 28px;
+    display: inline-block;
+    text-align: center;
+}
+
+.timer span:not(:last-child) {
+    margin-right: 2px;
+}
+
+.rewards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: #e0e0e0 #f5f5f5;
+}
+
+.rewards-grid::-webkit-scrollbar {
+    width: 5px;
+    background: #f5f5f5;
+    border-radius: 6px;
+}
+
+.rewards-grid::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+}
+
+.rewards-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.reward-box {
+    position: relative;
+    width: 180px;
+    height: 210px;
+    background: #18191c;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px #0007;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    overflow: hidden;
+    border: 1.5px solid #23232b;
+    margin: 0;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.reward-box .item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 38px;
+    padding: 10px 12px 0 12px;
+    position: relative;
+}
+
+.reward-box .day-label {
+    font-size: 1.05em;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+.reward-box .icon {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    min-height: 60px;
+    max-height: 80px;
+}
+
+.reward-box .icon img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    z-index: 1;
+}
+
+.reward-box .icon::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 70px;
+    height: 70px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 0;
+    filter: blur(16px);
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.reward-box .item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 16px 14px 16px;
+    min-height: 32px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.reward-label, .reward-amount {
+    font-size: 1.08em;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 0 1px 4px #000a;
+}
+
+.collect-btn {
+    background: #ffd600;
+    color: #18191c;
+    font-weight: 700;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 0;
+    font-size: 1em;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 4px;
+    transition: background 0.2s;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.collect-btn:hover { background: #ffe22c; }
+
+.collected-btn {
+    background: #fff;
+    color: #888;
+    font-weight: 700;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 0;
+    font-size: 1em;
+    width: 100%;
+    margin-top: 4px;
+    cursor: pointer;
+    opacity: 0.7;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+.collected-btn:hover { background: #cccccc; }
+
+.reward-box.glow-white .icon::before  { background: #fffbe6; }
+.reward-box.glow-blue .icon::before   { background: #00bfff; }
+.reward-box.glow-pink .icon::before   { background: #ff6ec7; }
+.reward-box.glow-yellow .icon::before { background: #ffe22c; }
+.reward-box.glow-green .icon::before  { background: #aaff77; }
+
+@media (max-width: 1200px) {
+    .daily-rewards-modal { max-width: 98vw; padding: 18px 4vw; }
+    .reward-box { width: 70px; height: 90px; }
+    .rewards-row { gap: 10px; }
+}
+
+@media (max-width: 900px) {
+    .reward-box { width: 110px; height: 130px; }
+    .reward-box .icon img { width: 40px; height: 40px; }
+    .reward-box .item-header { height: 28px; padding: 6px 6px 0 6px; }
+    .reward-box .item-footer { padding: 0 8px 8px 8px; min-height: 22px; }
+}
+
+@media (max-width: 700px) {
+    .daily-rewards-modal { padding: 8px 2vw; }
+    .reward-box { width: 48px; height: 62px; }
+    .rewards-row { gap: 6px; }
+    .title .daily, .title .rewards { font-size: 1.2rem; }
+    .timer { font-size: 0.9rem; }
+}
+
+.day-label {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+}
+.day-label-bg {
+    display: inline-block;
+    background: rgba(40,40,40,0.7);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.95em;
+    border-radius: 5px;
+    padding: 2px 10px;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 6px #0006;
+}
+
+.item-icon-frame {
+    border-radius: 10px;
+    margin: 10px 12px 10px 12px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70px;
+    box-shadow: 0 2px 10px #0004;
+    position: relative;
+}
+
+.item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 14px 8px 14px;
+    min-height: 28px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.close-btn {
+    position: static;
+    margin-left: 24px;
+    width: 38px;
+    height: 38px;
+    background: #ff2c2c;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 2rem;
+    font-weight: 900;
+    cursor: pointer;
+    z-index: 20;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px #0006;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.close-btn:hover { background: #c90000; }
+
+.notify {
+    position: fixed;
+    top: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff3c3c;
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 99999;
+    box-shadow: 0 4px 24px #000a;
+    animation: fadeInOut 2s;
+}
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.notify.error { background: #ff3c3c; }
+.notify.success { background: #1aff5c; color: #14304a; }
+
+.next-reward {
+    color: #ffd600;
+    font-weight: 700;
+    font-size: 1em;
+    letter-spacing: 1px;
+    margin-left: 12px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: default;
+    font-family: 'Montserrat', sans-serif;
+}
+.next-reward { color: #ffd600; }

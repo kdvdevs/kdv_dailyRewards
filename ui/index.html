@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Rewards</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="daily-rewards-modal">
+        <div class="header">
+            <div class="title">
+                <span class="daily">DAILY</span>
+                <span class="rewards">REWARDS</span>
+            </div>
+            <div class="timer">
+                <span class="timer-day"></span>
+                <span class="timer-text"></span>
+                <span class="next-reward">NEXT REWARD</span>
+            </div>
+            <button class="close-btn" id="closeModalBtn">×</button>
+        </div>
+        <div class="rewards-grid" id="rewards-grid">
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('closeModalBtn').onclick = function() {
+            document.body.style.display = 'none';
+            document.querySelector('.daily-rewards-modal').style.display = 'none';
+            fetch('https://kdv_dailyRewards/close', { method: 'POST' });        
+        };
+    </script>
+</body>
+</html>
