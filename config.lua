@@ -42,7 +42,7 @@ Config.DailyRewards = {
 }
 
 -- If you don't set these, don't worry, it will automatically display in English
--- Config.Texts = { 
+Config.Texts = { 
 --     -- UI translations
 --     daily = "HÀNG NGÀY",
 --     rewards = "PHẦN THƯỞNG",
@@ -64,4 +64,4 @@ Config.DailyRewards = {
 --     received_weapon = "Bạn nhận được vũ khí ~y~%s ~s~x%s",
 --     received_vehicle = "Bạn nhận được xe ~b~%s~s~ biển số ~y~%s",
 --     vehicle_error = "Có lỗi khi thêm xe, vui lòng liên hệ admin!"
--- }
+}
