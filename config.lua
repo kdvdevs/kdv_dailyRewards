@@ -44,24 +44,24 @@ Config.DailyRewards = {
 -- If you don't set these, don't worry, it will automatically display in English
 Config.Texts = { 
     -- -- UI translations
-    -- daily = "HÀNG NGÀY",
-    -- rewards = "PHẦN THƯỞNG",
-    -- next_reward = "PHẦN THƯỞNG TIẾP THEO",
-    -- collect = "NHẬN",
-    -- collected = "ĐÃ NHẬN",
-    -- locked = "KHÓA",
-    -- already_claimed = "Bạn đã nhận phần thưởng này rồi!",
-    -- not_time = "Chưa đến lúc nhận phần thưởng này!",
-    -- received = "Bạn đã nhận %s x%s",
-    -- day = "NGÀY",
+    -- daily = "DAILY",
+    -- rewards = "REWARDS",
+    -- next_reward = "NEXT REWARD",
+    -- collect = "COLLECT",
+    -- collected = "COLLECTED",
+    -- locked = "LOCKED",
+    -- already_claimed = "You have already claimed this reward!",
+    -- not_time = "It's not time to claim this reward yet!",
+    -- received = "You have received %s x%s",
+    -- day = "DAY",
     -- timer = "%sH : %sM : %sS",
 
     -- -- Server translations
-    -- already_claimed = "Bạn đã nhận quà hôm nay rồi!",
-    -- all_claimed = "Bạn đã nhận hết phần thưởng tháng này!",
-    -- received_item = "Bạn nhận được ~b~%sx %s",
-    -- received_money = "Bạn nhận được ~g~$%s",
-    -- received_weapon = "Bạn nhận được vũ khí ~y~%s ~s~x%s",
-    -- received_vehicle = "Bạn nhận được xe ~b~%s~s~ biển số ~y~%s",
-    -- vehicle_error = "Có lỗi khi thêm xe, vui lòng liên hệ admin!"
+    -- already_claimed = "You have already claimed today's reward!",
+    -- all_claimed = "You have claimed all rewards for this month!",
+    -- received_item = "You received ~b~%sx %s",
+    -- received_money = "You received ~g~$%s",
+    -- received_weapon = "You received weapon ~y~%s ~s~x%s",
+    -- received_vehicle = "You received vehicle ~b~%s~s~ with plate ~y~%s",
+    -- vehicle_error = "There was an error adding the vehicle, please contact an admin!"
 }
