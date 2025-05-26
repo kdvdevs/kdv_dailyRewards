@@ -41,26 +41,44 @@ RegisterNetEvent('kdv_dailyRewards:give', function(data)
             return
         end
 
+        local function updateReward()
+            MySQL.Async.execute([[
+                INSERT INTO daily_rewards (identifier, year, month, days_collected, last_login)
+                VALUES (@id, @year, @month, @days, @login)
+                ON DUPLICATE KEY UPDATE days_collected=@days, last_login=@login
+            ]], {
+                ['@id'] = identifier,
+                ['@year'] = year,
+                ['@month'] = month,
+                ['@days'] = nextDay,
+                ['@login'] = today
+            })
+        end
+
         if reward.type == "item" then
             xPlayer.addInventoryItem(reward.item, reward.amount)
+            updateReward()
             TriggerClientEvent('esx:showNotification', src, 
                 (Config.Texts.received_item or "You received ~b~%sx %s")
                 :format(reward.amount, reward.label)
             )
         elseif reward.type == "money" then
             xPlayer.addMoney(reward.amount)
+            updateReward()
             TriggerClientEvent('esx:showNotification', src, 
                 (Config.Texts.received_money or "You received ~g~$%s")
                 :format(reward.amount)
             )
         elseif reward.type == "weapon" then
             xPlayer.addWeapon(reward.item, reward.amount)
+            updateReward()
             TriggerClientEvent('esx:showNotification', src, 
                 (Config.Texts.received_weapon or "You received weapon ~y~%s ~s~x%s")
                 :format(reward.label, reward.amount)
             )
         elseif reward.type == "vehicle" then
             AddVehicleToPlayer(src, reward)
+            updateReward()
         else
             print("[DailyRewards] Unknown type:", reward.type)
         end
