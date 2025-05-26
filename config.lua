@@ -54,7 +54,7 @@ Config.Texts = {
     not_time = "Chưa đến lúc nhận phần thưởng này!",
     received = "Bạn đã nhận %s x%s",
     day = "NGÀY",
-    timer = "%sH : %sM : %sS"
+    timer = "%sH : %sM : %sS",
 
     -- Server translations
     already_claimed = "Bạn đã nhận quà hôm nay rồi!",
